@@ -5,6 +5,7 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner digitar = new Scanner(System.in);
+        System.out.println("Banco");
 
         System.out.println("Banco");
         System.out.println("Digite as informações");
