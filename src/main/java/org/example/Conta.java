@@ -2,42 +2,57 @@ package org.example;
 
 public class Conta {
 
-    private String nome;
-    private String cpf;
-    private String dataNascimento;
+    private Pessoa pessoa;
+
+    private String agencia;
+
+    private String numeroConta;
+
+    private String DataAbertura;
+
     private int saldo;
 
-    public Conta(String nome, String cpf, String dataNascimento) {
-        this.nome = nome;
-        this.cpf = cpf;
-        this.dataNascimento = dataNascimento;
+    public Conta(Pessoa pessoa, String agencia, String numeroConta, String dataAbertura) {
+        this.pessoa = pessoa;
+        this.agencia = agencia;
+        this.numeroConta = numeroConta;
+        this.DataAbertura = dataAbertura;
+        this.saldo = saldo;
     }
 
-    public String getNome() {
-        return nome;
+    public Pessoa getPessoa() {
+        return pessoa;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setPessoa(Pessoa pessoa) {
+        this.pessoa = pessoa;
     }
 
-    public String getCpf() {
-        return cpf;
+    public String getAgencia() {
+        return agencia;
     }
 
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
+    public void setAgencia(String agencia) {
+        this.agencia = agencia;
     }
 
-    public String getDataNascimento() {
-        return dataNascimento;
+    public String getNumeroConta() {
+        return numeroConta;
     }
 
-    public void setDataNascimento(String dataNascimento) {
-        this.dataNascimento = dataNascimento;
+    public void setNumeroConta(String numeroConta) {
+        this.numeroConta = numeroConta;
     }
 
-    public int getSaldo() {
+    public String getDataAbertura() {
+        return DataAbertura;
+    }
+
+    public void setDataAbertura(String dataAbertura) {
+        DataAbertura = dataAbertura;
+    }
+
+    public double getSaldo() {
         return saldo;
     }
 
@@ -45,11 +60,12 @@ public class Conta {
         this.saldo = saldo;
     }
 
-    public void depositar(int quantidade){
+    public void depositar(double quantidade){
+
         saldo += quantidade;
     }
 
-    public int sacar(int quantidade){
+    public double sacar(double quantidade){
         if(quantidade<=saldo){
             saldo -= quantidade;
             return saldo;

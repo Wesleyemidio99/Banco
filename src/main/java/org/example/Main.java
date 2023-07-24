@@ -3,6 +3,30 @@ package org.example;
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
+        Scanner digitar = new Scanner(System.in);
+        int opcao;
+
+        do{
+
+            System.out.println("Digite qual opcao deseja:");
+            System.out.println("1- cadastrar / 2 Cadastrado");
+            opcao = digitar.nextInt();
+
+            switch (opcao){
+                case 1:
+                    cadastrarUsuario();
+                    break;
+
+                case 2:
+                    menuUsuarioCadastrado();
+                    break;
+            }
+
+        }while (opcao != -1);
+        digitar.close();
+    }
+
+    public static void cadastrarUsuario(){
 
         Scanner digitar = new Scanner(System.in);
 
@@ -13,42 +37,50 @@ public class Main {
         String cpf = digitar.nextLine();
         System.out.println("Digite sua data de nascimento");
         String dataNascimento = digitar.nextLine();
+        System.out.println("Digite o endereco:");
+        String endereco = digitar.nextLine();
 
-        Conta conta = new Conta(nome, cpf,dataNascimento); //Criando o Objeto Conta
+        Pessoa cadastroPessoa = new Pessoa(nome,cpf,dataNascimento,endereco);
+        Conta conta = new Conta(cadastroPessoa,"05221-050","58","28/07/2020");
 
-        System.out.println("Digite qual opcao deseja:");
-        System.out.println("1- Verificar cadastro / 2 - saldo / 3 - deposito / 4 - saque");
-        int opcao = digitar.nextInt();
+        digitar.close();
 
-        switch (opcao){
-            case 1:
+    }
 
-                System.out.println(conta.getNome());
-                System.out.println(conta.getCpf());
-                System.out.println(conta.getDataNascimento());
+    public static void menuUsuarioCadastrado(){
 
-                break;
+        Scanner digitar = new Scanner(System.in);
+        int opcao;
 
-            case 2:
-                System.out.println("O seu saldo = " + conta.getSaldo());
-                break;
 
-            case 3:
-                System.out.println("Digite a quantidade que deseja depositar");
-                int quantidadeDepositar = digitar.nextInt();
-                conta.depositar(quantidadeDepositar);
-                System.out.println("Quantidade do saldo = " + conta.getSaldo());
-                break;
+        do{
 
-            case 4:
-                System.out.println("Digite a quantidade para fazer o saque:");
-                int quantidadeSaque = digitar.nextInt();
-                conta.sacar(quantidadeSaque);
-                System.out.println("Quantidade restante do saldo = " + conta.getSaldo());
-        }
+            System.out.println("Digite a o que deseja fazer:");
+            System.out.println("1 - verificar cadastro / 2 - saldo / 3 - depositar / 4 - sacar");
+            opcao = digitar.nextInt();
+
+            switch(opcao){
+                case 1:
+                    break;
+
+                case 2:
+                    break;
+
+                case 3:
+                    break;
+
+                case 4:
+                    break;
+            }
+
+        }while(opcao != -1);
 
         digitar.close();
 
     }
 
 }
+
+
+
+
