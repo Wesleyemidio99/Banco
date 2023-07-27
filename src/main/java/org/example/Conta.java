@@ -71,7 +71,7 @@ public class Conta {
             return saldo;
         }
         else{
-            return 0;
+            return -1;
         }
     }
 
