@@ -50,10 +50,20 @@ public class Main {
 
             switch(opcao){
                 case 1:
+                    System.out.println("Informacoes Pessoais");
                     System.out.println(conta.getPessoa().getNome());
-                    System.out.println(conta.getPessoa().getEndereco());
                     System.out.println(conta.getPessoa().getCpf());
                     System.out.println(conta.getPessoa().getDataNascimento());
+                    System.out.println("\nInformacoes da conta");
+                    System.out.println(conta.getAgencia());
+                    System.out.println(conta.getNumeroConta());
+                    System.out.println(conta.getDataAbertura());
+                    System.out.println("\nInformacoes do endereco");
+                    System.out.println(conta.getPessoa().getEndereco().getRua());
+                    System.out.println(conta.getPessoa().getEndereco().getNumero());
+                    System.out.println(conta.getPessoa().getEndereco().getBairro());
+                    System.out.println(conta.getPessoa().getEndereco().getCidade());
+                    System.out.println(conta.getPessoa().getEndereco().getEstado());
                     break;
 
                 case 2:
