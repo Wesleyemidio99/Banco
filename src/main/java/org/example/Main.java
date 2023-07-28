@@ -5,15 +5,27 @@ public class Main {
     public static void main(String[] args) {
         Scanner digitar = new Scanner(System.in);
 
-        System.out.println("Digite as informacoes para cadastrar:");
+        System.out.println("Digite suas informacoes pessoais:");
         System.out.println("Digite seu nome");
         String nome = digitar.nextLine();
         System.out.println("Digite seu CPF");
         String cpf = digitar.nextLine();
         System.out.println("Digite sua data de nascimento");
         String dataNascimento = digitar.nextLine();
-        System.out.println("Digite o endereco:");
-        String endereco = digitar.nextLine();
+        System.out.println("informe seu endereco:");
+        System.out.println("Digite o nome da rua:");
+        String rua = digitar.nextLine();
+        System.out.println("Digite o numero da sua casa:");
+        int casa  = digitar.nextInt();
+        digitar.nextLine();
+        System.out.println("Digite o nome do bairro:");
+        String bairro = digitar.nextLine();
+        System.out.println("Digite o nome da cidade:");
+        String cidade = digitar.nextLine();
+        System.out.println("Digite o nome do estado:");
+        String estado = digitar.nextLine();
+
+        Endereco endereco = new Endereco(rua,casa,bairro,cidade,estado);
 
         Pessoa cadastroPessoa = new Pessoa(nome,cpf,dataNascimento,endereco);
         Conta conta = new Conta(cadastroPessoa,"05221-050","58","28/07/2020");

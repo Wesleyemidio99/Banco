@@ -4,13 +4,16 @@ public class Pessoa {
     private String nome;
     private String cpf;
     private String dataNascimento;
-    private String endereco;
+    private Endereco endereco;
 
-    public Pessoa(String nome, String cpf, String dataNascimento, String endereco) {
+    public Pessoa(Endereco endereco) {
+        this.endereco = endereco;
+    }
+
+    public Pessoa(String nome, String cpf, String dataNascimento, Endereco endereco) {
         this.nome = nome;
         this.cpf = cpf;
         this.dataNascimento = dataNascimento;
-        this.endereco = endereco;
     }
 
     public String getNome() {
