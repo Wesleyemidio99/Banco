@@ -14,6 +14,7 @@ public class Pessoa {
         this.nome = nome;
         this.cpf = cpf;
         this.dataNascimento = dataNascimento;
+        this.endereco = endereco;
     }
 
     public String getNome() {
